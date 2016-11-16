@@ -1,6 +1,26 @@
+    // var authKey = "NjIxODAxMnwxNDc5MjY2ODQ0"
+
+    // var searchEvent = "https://api.seatgeek.com/2/search?q=" + events + "&type=events";
 
 
     //Search
+    function find(events){
+      var queryURL = "http://eventful.com/events?q=" + events + "&type=music";
+      $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+          console.log(response)
+
+
+          
+        });
+}
+      $('#selectEvent').on('click', function(){
+        
+        var eventSearch = $('#findEvent').val().trim();
+
+        find(events);
+         return false;
+
+         });
 
 
         function getArtistTrack(artist){
@@ -47,49 +67,7 @@
         return false;
     });
 
-    //YoutubePlayer
-
-    // var tag = document.createElement('script');
-
-    // tag.src = "https://www.youtube.com/iframe_api";
-    // var firstScriptTag = document.getElementsByTagName('script')[0];
-    // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    // var player;
-
-    // function onYouTubeIframeAPIReady() {
-    //     player = new YT.Player('player', {
-    //         height: '390',
-    //         width: '640',
-    //         videoId: 'k92G_wfpG2w',
-    //         events: {
-    //             'onReady': onPlayerReady,
-    //             'onStateChange': onPlayerStateChange
-    //             }
-    //         });
-    //     }
-
-    //     function onPlayerReady(event) {
-    //         event.target.playVideo();
-    //     }
-
-    //     var done = false;
-        
-    //     function onPlayerStateChange(event) {
-    //         if (event.data == YT.PlayerState.PLAYING && !done) {
-    //             setTimeout(stopVideo, 6000);
-    //             done = true;
-    //         }
-    //     }
-
-    //     function stopVideo() {
-    //         player.stopVideo();
-    //     }
-
-      // Note: This example requires that you consent to location sharing when
-      // prompted by your browser. If you see the error "The Geolocation service
-      // failed.", it means you probably did not give permission for the browser to
-      // locate you.
+   
 
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
